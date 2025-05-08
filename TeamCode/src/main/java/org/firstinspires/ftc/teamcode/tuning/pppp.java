@@ -35,7 +35,7 @@ public class pppp extends LinearOpMode {
         leftLift.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightLift.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightLift.setDirection(DcMotor.Direction.REVERSE);
-        Pose2d initialPose = new Pose2d(0, 60, Math.toRadians(90));
+        Pose2d initialPose = new Pose2d(-22, -60, Math.toRadians(180));
         MecanumDrive drive = new MecanumDrive(hardwareMap, initialPose);
         // vision here that outputs position
         int visionOutputPosition = 1;
@@ -44,7 +44,9 @@ public class pppp extends LinearOpMode {
         TrajectoryActionBuilder tab2 = drive.actionBuilder(initialPose);
         TrajectoryActionBuilder tab3 = drive.actionBuilder(initialPose);
         Action trajectoryActionCloseOut = tab1.endTrajectory()
-                .splineTo(new Vector2d(-46.20, -46.61), Math.toRadians(0))
+
+                .splineTo(new Vector2d(-46.37, -35.58), Math.toRadians(242.55))
+                .splineTo(new Vector2d(-58.10, -58.16), Math.toRadians(0))
                 .build();
 
         int startPosition = visionOutputPosition;
